@@ -4,11 +4,10 @@ import { catchError, tap } from 'rxjs/operators';
 import { BehaviorSubject, Subject, throwError } from 'rxjs';
 import { User } from './user.model';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 const SIGN_UP = 'signUp';
 const SIGN_IN = 'signInWithPassword';
-
-const API_KEY = 'AIzaSyBHKcAG-IBHuyV1A9qYqgBiDwgL5SGPqa8';
 
 function queryLink(action: string, apiKey: string): string {
   return `https://identitytoolkit.googleapis.com/v1/accounts:${action}?key=${apiKey}`;
@@ -32,7 +31,7 @@ export class AuthService {
 
   signup(email: string, password: string) {
     return this.http
-      .post<AuthResponseData>(queryLink(SIGN_UP, API_KEY), {
+      .post<AuthResponseData>(queryLink(SIGN_UP, environment.firebaseAPIKey), {
         email: email,
         password: password,
         returnSecureToken: true,
@@ -80,7 +79,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.http
-      .post<AuthResponseData>(queryLink(SIGN_IN, API_KEY), {
+      .post<AuthResponseData>(queryLink(SIGN_IN, environment.firebaseAPIKey), {
         email: email,
         password: password,
         returnSecureToken: true,

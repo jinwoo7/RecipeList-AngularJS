@@ -15,8 +15,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     RecipesComponent,
     RecipeListComponent,
-    RecipeItemComponent,
     RecipeDetailComponent,
+    RecipeItemComponent,
     RecipeStartComponent,
     RecipeEditComponent,
   ],

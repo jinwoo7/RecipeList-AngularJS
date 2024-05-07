@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../models/recipe.model';
 import { Observable, exhaustMap, map, take, tap } from 'rxjs';
-import { AuthService } from './auth.service';
+import { AuthService } from '../auth/auth.service';
 
 const FIREBASE_URL =
   'https://ng-course-recipe-book-e10b6-default-rtdb.firebaseio.com/';

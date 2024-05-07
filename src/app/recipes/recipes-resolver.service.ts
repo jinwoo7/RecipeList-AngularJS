@@ -6,7 +6,7 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { Recipe } from '../models/recipe.model';
-import { DataStorageService } from './data-storage.service';
+import { DataStorageService } from '../services/data-storage.service';
 import { RecipeService } from './recipe.service';
 
 @Injectable({ providedIn: 'root' })

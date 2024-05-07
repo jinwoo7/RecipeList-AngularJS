@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs';
 
-import { Ingredient } from '../models/ingredient.model';
+import { Ingredient } from '../shared/ingredient.model';
 
 export class ShoppingListService {
   ingredientsChanged = new Subject<Ingredient[]>();
